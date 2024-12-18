@@ -29,7 +29,7 @@ fi
 echo Verify public key is added to Github
 echo repo as read-only deploy key:
 echo
-cat ~/.ssh/id_ed25519
+cat ~/.ssh/id_ed25519.pub
 echo
 read -p "Press Enter to continue once key is added"
 eval `ssh-agent -s`

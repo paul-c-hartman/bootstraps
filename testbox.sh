@@ -32,6 +32,8 @@ echo
 cat ~/.ssh/id_ed25519.pub
 echo
 read -p "Press Enter to continue once key is added"
+# Add github.com as a known host
+ssh-keyscan -H github.com >> ~/.ssh/known_hosts
 eval `ssh-agent -s`
 ssh-add
 git clone git@github.com:paul-c-hartman/testbox.git

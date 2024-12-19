@@ -46,7 +46,12 @@ echo -e "Using branch '$branch'"
 # Run setup scripts
 cd testbox
 git checkout $branch
-./setup/init.sh
+echo
+echo ====================
+echo Running setup script
+echo ====================
+echo -e "(logging to ~/setup.log)"
+./setup/init.sh | tee ~/setup.log
 
 # Cleanup from bootstrap
 echo -ne "Cleaning up bootstrap script..."

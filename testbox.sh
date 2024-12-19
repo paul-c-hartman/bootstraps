@@ -51,7 +51,7 @@ echo ====================
 echo Running setup script
 echo ====================
 echo -e "(logging to ~/setup.log)"
-./setup/init.sh | tee ~/setup.log
+./setup/init.sh 2>&1 | tee ~/setup.log
 
 # Cleanup from bootstrap
 echo -ne "Cleaning up bootstrap script..."

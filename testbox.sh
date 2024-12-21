@@ -53,7 +53,7 @@ echo ====================
 echo Running setup script
 echo ====================
 echo -e "(logging to ~/setup.log)"
-./setup/init.sh 2>&1 | tee ~/setup.log
+branch=$branch ./setup/init.sh 2>&1 | tee ~/setup.log
 
 # Trigger update process
 echo

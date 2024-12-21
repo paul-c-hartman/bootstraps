@@ -55,8 +55,13 @@ echo ====================
 echo -e "(logging to ~/setup.log)"
 ./setup/init.sh 2>&1 | tee ~/setup.log
 
+# Trigger update process
+sudo -u docker bash ~/testbox/bin/update_services
+
 # Cleanup from bootstrap
 echo -ne "Cleaning up bootstrap script..."
 eval `ssh-agent -k` # Kill agent
 rm -r ~/testbox
 echo -e " Done."
+# Restart to flush changes, esp. firmware
+sudo shutdown -r now
